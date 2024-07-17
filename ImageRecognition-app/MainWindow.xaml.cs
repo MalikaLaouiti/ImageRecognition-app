@@ -104,30 +104,30 @@ namespace ImageRecognition_app
                     if (!string.IsNullOrEmpty(InputTextBox.Text))
                     {
 
-                        await AnalyzeImageLocal(client, selectedFileName, this);
+                    await AnalyzeImageLocal(client, selectedFileName, this);
 
-                        // Update UI based on analysis if needed
-                        if (valid)
+                    // Update UI based on analysis if needed
+                    if (valid)
+                    {
+                        Dispatcher.Invoke(() =>
                         {
-                            Dispatcher.Invoke(() =>
-                            {
-                                YesButton.Background = new SolidColorBrush(Color.FromRgb(20, 201, 120));
-                                YesButton.Foreground = new SolidColorBrush(Colors.Black);
-
-                            });
-                        }
-                        else
-                        {
-                            Dispatcher.Invoke(() =>
-                            {
-                                NoButton.Background = new SolidColorBrush(Color.FromRgb(193, 18, 31));
-                                NoButton.Foreground = new SolidColorBrush(Colors.Black);
-
-                            });
-                        }
+                            YesButton.Background = new SolidColorBrush(Color.FromRgb(20, 201, 120));
+                            YesButton.Foreground = new SolidColorBrush(Colors.Black);
+                            
+                        });
                     }
                     else
                     {
+                        Dispatcher.Invoke(() =>
+                        {
+                            NoButton.Background = new SolidColorBrush(Color.FromRgb(193, 18, 31));
+                            NoButton.Foreground = new SolidColorBrush(Colors.Black);
+                            
+                        });
+                    }
+                }
+                else
+                {
                         MessageBox.Show("No text ");
                     }
                 }
@@ -174,11 +174,13 @@ namespace ImageRecognition_app
                     if (tag.Name == input)
                     {
                         mainWindow.valid = true;
+                        
                         return;
                     }
              
                 }
                 mainWindow.valid = false;
+                
             }
         }
         
