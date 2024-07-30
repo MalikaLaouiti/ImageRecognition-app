@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageRecognition_app"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Icon="C:\malika\ete 2024\WebProSoft\ImageRecognition-app\favicon.ico">
+        Title="Image Recognition" Height="450" Width="800" Icon="C:\malika\ete 2024\WebProSoft\ImageRecognition-app\favicon.ico">
     <Grid Background="#CBE2E7">
         <Grid>
 
